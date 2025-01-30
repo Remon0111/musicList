@@ -8,6 +8,8 @@ ytmusicapi = "*"
 django = "*"
 psycopg2 = "*"
 spotipy = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

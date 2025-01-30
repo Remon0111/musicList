@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/> {% comment %} resetcss使いやすすぎ {% endcomment %}
+    <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+</head>
+<body>
+    <header>
+            <img class="faviconImg" src="{% static '/icon/favicon.png' %}">
+        <h1 class="title">SearchMusic</h1>
+        <id class="search">
+            <form method="GET" action="{% url 'main' %}">
+                <input class="searchInput" type="text" name="keyword"/>
+                <button class="searchButton" type="submit">
+                    <img class="searchIcon" src="{% static '/icon/searchIcon.png' %}">
+                </button>
+                </label>
+            </form>
+        </id>
+        <button class="editmusic" onclick='location.href="{% url "edit" %}"'>新規曲追加</button>
+        <button class="editmusic" onclick='location.href="{% url "profile" %}"'>アカウント</button>
+    </header>
+    <div class="sidebar">
+        <ul class="sidebar-group">
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "main" %}"'>Home</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "Jpop" %}"'>J-pop</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "bokaro" %}"'>ボカロ</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "rock" %}"'>ロック</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "hiphop" %}"'>ヒップホップ</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "jaz" %}"'>ジャズ</button></li>
+            <li class="sidebar-item"><button class="sidebar-button" onclick='location.href="{% url "classic" %}"'>クラシック</button></li>
+    </div>
+    <div class="musiclist">
+        {% for music in music %}
+        <div class="musicgroup">
+            <br>
+            <img class="albumImage" src={{ music.musicimages }}>
+            <div class="right">
+                <h3>タイトル：{{ music.musicname }}</h3>
+                <p>作詞作曲：{{ music.musicvocalist }}</p>
+                <p>アルバム名：{{ music.albumname}}</p>
+                <p><a href={{ music.musicurl }} target="_blank">{{ music.musicselect }}はこちらから</a></p>
+            </div>
+            <div class="right">
+                <p>カテゴリー：{{ music.category }}</p>
+            </div>
+            <button class="showbutton" onclick="location.href='{% url "detail" music.id %}'">表示</button>
+            <button class="updatebutton" onclick="location.href='{% url "update" music.id %}'">編集</button>
+            <button class="deletebutton" onclick="location.href='{% url "delete" music.id %}'">削除</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

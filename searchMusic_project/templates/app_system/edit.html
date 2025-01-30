@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/edit.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/> {% comment %} resetcss使いやすすぎ {% endcomment %}
+    <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+</head>
+<body>
+    <h1>新規曲追加ページ</h1>
+    <form method="post" action="{% url 'edit' %}" >
+        {% csrf_token %}
+        <h3>曲名</h3>
+        <input type="text" placeholder="title" name="{{ form.musicname.html_name }}" value="{{ object.musicname }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <h3>作詞・作曲</h3>
+        <input type="text" placeholder="musicvocalist" name="{{ form.musicvocalist.html_name }}" value="{{ object.musicvocalist }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <h3>アルバム名</h3>
+        <input type="text" placeholder="albumname" name="{{ form.albumname.html_name }}" value="{{ object.albumname }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <h3>画像のリンク</h3>
+        <input type="text" placeholder="musicimages" name="{{ form.musicimages.html_name }}" value="{{ object.musicimages }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <h3>動画へのURL</h3>
+        <input type="text" placeholder="musicurl" name="{{ form.musicurl.html_name }}" value="{{ object.musicurl }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <h3>情報源</h3>
+        <input type="text" placeholder="musicselect" name="{{ form.musicselect.html_name }}" value="{{ object.musicselect }}" autofocus="" autocapitalize="none" maxlength="100" required="">
+        <button type="submit">情報を更新</button>
+    </form>
+
+    <button id="modalOpen" class="button">YouTubeからダウンロード</button>
+    <div id="easyModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1>YouTubeから入力</h1>
+            <span class="modalClose">×</span>
+        </div>
+        <form method="post" action="{% url 'youtube' %}" >
+            {% csrf_token %}
+            <div class="modal-body">
+                <p>YouTubeURL:</p>
+                <input type"text" placeholder="https://music.youtube.com/" name="youtubeurl"><br>
+                <button type="submit">情報を入力</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <button id="modalOpen2" class="button">Spotifyからダウンロード</button>
+    <div id="easyModal2" class="modal2">
+    <div class="modal-content2">
+        <div class="modal-header2">
+            <h1>Spotifyからダウンロード</h1>
+            <span class="modalClose2">×</span>
+        </div>
+        <form method="post" action="{% url 'spotify' %}" >
+            {% csrf_token %}
+            <div class="modal-body2">
+                <p>SpotifyURL:</p>
+                <input type"text" placeholder="https://open.spotify.com/" name="spotifyurl"><br>
+                <button type="submit">情報を入力</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <button type="button" onclick="location.href='{% url 'main' %}'">リストに戻る</button>
+
+    <script src="{% static 'js/edit.js' %}"></script>
+</body>
+</html>

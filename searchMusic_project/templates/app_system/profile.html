@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/> {% comment %} resetcss使いやすすぎ {% endcomment %}
+    <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="nametext">Welcome,  {{ User.username }}!</h1>
+        <p>Username: {{ User.username }}</p>
+        <p>Email: {{ User.email }}</p>
+        {% for user in users %}
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="logoutbutton" type="submit">ログアウト</button>
+        </form>
+        {% else %}
+        {% endif %}
+        <button class="gomainpage" onclick='location.href="{% url "main" %}"'>メインページに戻る</button>
+    </div>
+</body>
+</html>

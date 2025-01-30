@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/> {% comment %} resetcss使いやすすぎ {% endcomment %}
+    <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+    <title>ditail</title>
+</head>
+<body>
+    <h1>曲のタイトル： {{ object.musicname }}</h1>
+    <p>作詞作曲： {{ object.musicvocalist }}</p>
+    <p>画像URL： {{ object.musicimages }}</p>
+    <p>曲のURL： {{ object.musicurl }}<p>
+    <p>提供： {{ object.musicselect }}</p>
+    <p>カテゴリー： {{ object.category }}</p>
+    <button class="gomainpage" onclick='location.href="{% url "main" %}"'>メインページに戻る</button>
+</html>

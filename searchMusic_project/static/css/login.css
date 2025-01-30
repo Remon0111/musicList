@@ -1,0 +1,47 @@
+.box {
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    background: #cccccc;
+    border-radius: 3%;
+}
+li {
+    padding-top: 35px;
+}
+.username {
+    margin-top: 50px;
+}
+div {
+    margin-top: 50px;
+    border-radius: 10%;
+}
+label {
+    font-size: 25px;
+    padding-right: 10px;
+}
+.loginbutton {
+    position: relative;
+    top: 80px;
+    text-align: center;
+    color: white;
+    background-color: skyblue;
+    border: transparent;
+    border-radius: 50px;
+    width: 300px;
+    height: 50px;
+}
+.loginbutton:hover {
+    background-color: #90d5f0;
+}
+.gosignupbutton {
+    position: relative;
+    top: 120px;
+    background-color: transparent;
+    border: transparent;
+    color: #60c7f0;
+}
+.gosignupbutton:hover {
+    text-decoration:underline;
+    text-decoration-color: #60c7f0;
+}

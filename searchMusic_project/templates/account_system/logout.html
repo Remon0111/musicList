@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/logout.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css"/> {% comment %} resetcss使いやすすぎ {% endcomment %}
+    <link rel="icon" href="{% static '/icon/favicon.ico' %}">
+    <title>Logout</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="logouttext" >ログアウトしました</h1>
+        <button class="logoutbutton" onclick='location.href="{% url "opening" %}"'>最初のページへ戻る</button>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+button {
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+/* header */
+header {
+    position: fixed;
+    border: solid;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    display: flex;
+    width: 100%;
+    height: 110px;
+    background-color: skyblue;
+    align-items: center;
+    z-index: 1;
+}
+
+.titleIconBox {
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: blue;
+}
+
+.faviconImg {
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.searchInput {
+    margin-left: 50px;
+    float: left;
+    width: 500px;
+    height: 45px;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    padding: 15px;
+}
+
+.searchButton {
+    margin-right: 20px;
+    float: right;
+    width : 50px;
+    height : 45px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+}
+.searchButton:hover {
+    background-color: #a9a9a9;
+}
+
+select{
+    border: none;
+    border-radius: 5px;
+    min-width: 100px;
+    height: 25px;
+}
+
+.editmusic {
+    border-radius: 5px;
+    margin-left: 20px;
+    background-color: transparent;
+}
+
+.editmusic:hover {
+    background-color: #a9a9a9;
+}
+
+/* sidebar */
+.sidebar {
+    top: 110px;
+    position: fixed;
+    border: solid;
+    border-top: transparent;
+    border-left: transparent;
+    border-bottom: transparent;
+    width: 200px;
+    height: 1000px;
+    background-color: skyblue;
+}
+
+.searchIcon {
+    margin: auto;
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-group {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    list-style: none;
+    display: inline-block;
+    padding-top: 70px;
+    border-radius: 20%;
+}
+
+.sidebar-button {
+    text-decoration-line: none;
+    color: black;
+    border: none;
+    background-color: transparent;
+}
+
+.sidebar-button:hover {
+    background-color: #a9a9a9;
+}
+
+/* musiclist */
+.musiclist {
+    padding-top: 130px;
+    padding-left: 205px;
+}
+
+.musicgroup {
+    display: flex;
+    padding: 10px;
+    border: solid;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.albumImage {
+    border: solid;
+    width: 100px;
+    height: 100px;
+}
+
+h3 {
+    /* margin: 0; */
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+p {
+    padding-left: 5px;
+}
+
+a {
+    margin: bottom;
+}
+
+.showbutton {
+    border-radius: 5px;
+    margin-left: auto;
+    width: 70px;
+}
+
+.showbutton:hover {
+    background-color: #a9a9a9;
+}
+
+.updatebutton {
+    border-radius: 5px;
+    width: 70px;
+}
+
+.updatebutton:hover {
+    background-color: #a9a9a9;
+}
+
+.deletebutton {
+    border-radius: 5px;
+    width: 70px;
+    background-color: red;
+}

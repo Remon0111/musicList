@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,6 +24,11 @@ SECRET_KEY = 'django-insecure-$wu@qs#85#)=52a&nqqp(+52ty1^7yyxqw^bd6@o=h2$5l*6ye
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+# Or * to allow all
+ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -69,16 +72,11 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 WSGI_APPLICATION = 'searchMusic_project.wsgi.application'
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-# Or * to allow all
-ALLOWED_HOSTS = ['*']
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -86,11 +84,11 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.environ.get("searchmusic_db"), #ご自身が作成したデータベース名
-        "USER": os.environ.get("postgres"), #ご自身が設定したユーザー名
-        "PASSWORD": os.environ.get("postgres"), #ご自身が設定したパスワード
-        "HOST": os.environ.get("localhost"),
-        "PORT": os.environ.get("5432"),
+        "NAME": "searchmusic_db", #ご自身が作成したデータベース名
+        "USER": "postgres", #ご自身が設定したユーザー名
+        "PASSWORD": "postgres", #ご自身が設定したパスワード
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 

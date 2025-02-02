@@ -25,10 +25,6 @@ SECRET_KEY = 'django-insecure-$wu@qs#85#)=52a&nqqp(+52ty1^7yyxqw^bd6@o=h2$5l*6ye
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-# Or * to allow all
-ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -73,7 +69,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 
 WSGI_APPLICATION = 'searchMusic_project.wsgi.application'
 

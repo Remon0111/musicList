@@ -6,19 +6,17 @@
     background: #cccccc;
     border-radius: 3%;
 }
-li {
-    padding-top: 35px;
-}
+
 .username {
     margin-top: 50px;
 }
 div {
     margin-top: 50px;
-    border-radius: 10%;
 }
 label {
     font-size: 25px;
     padding-right: 10px;
+    padding-left: 70px;
 }
 .loginbutton {
     position: relative;

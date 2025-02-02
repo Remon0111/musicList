@@ -11,7 +11,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(redirect_authenticated_user=True, template_name='account_system/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='account_system/logout.html'), name='logout'),
     path('signup/', views.SignupView.as_view(), name='signup'),
-    # path('search/', views.Search_list, name='search'),
     path('profile/', views.profile_view, name='profile'),
     path("detail/<int:pk>/", views.detail.as_view(), name="detail"),
     path("update/<int:pk>", views.update.as_view(), name="update"),
@@ -20,5 +19,4 @@ urlpatterns = [
     path('youtube/', views.youtubeurl, name='youtube'),
     path("spotify/", views.spotifyurl, name='spotify'),
     path('error/', views.errorpage, name="error"),
-    # path('article/create/', ArticleCreateView.as_view(), name="article_create"),
 ]

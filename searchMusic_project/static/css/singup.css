@@ -34,3 +34,15 @@ label {
 .singupbutton:hover {
     background-color: #90d5f0;
 }
+
+.gologinbutton {
+    position: relative;
+    top: 120px;
+    background-color: transparent;
+    border: transparent;
+    color: #60c7f0;
+}
+.gologinbutton:hover {
+    text-decoration:underline;
+    text-decoration-color: #60c7f0;
+}
